@@ -1,0 +1,13 @@
+.orders-list{display:flex;flex-direction:column;gap:14px}
+.order-card{background:white;border-radius:var(--radius-lg);border:1px solid var(--gray-100);overflow:hidden}
+.order-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;cursor:pointer;transition:background .18s;flex-wrap:wrap;gap:12px}
+.order-header:hover{background:var(--cream)}
+.order-number{font-weight:700;font-family:var(--font-heading);font-size:1rem;margin-bottom:2px}
+.order-meta{font-size:.78rem;color:var(--gray-500)}
+.order-details{border-top:1px solid var(--gray-100);padding:20px 24px;display:flex;flex-direction:column;gap:14px}
+.order-item{display:grid;grid-template-columns:64px 1fr auto;gap:14px;align-items:start}
+.oi-img{width:64px;height:80px;object-fit:cover;border-radius:var(--radius-sm)}
+.oi-name{font-size:.875rem;font-weight:500;margin-bottom:4px}
+.oi-meta{font-size:.72rem;color:var(--gray-500)}
+.oi-price{font-size:.875rem;font-weight:600;white-space:nowrap}
+.order-footer{display:flex;justify-content:space-between;padding-top:14px;border-top:1px solid var(--gray-100);font-size:.82rem;flex-wrap:wrap;gap:8px}
