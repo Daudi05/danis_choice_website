@@ -45,7 +45,7 @@ def create_app(config_name=None):
         app,
         resources={r"/api/*": {
             "origins": [
-                "https://danis-choice-website.vercel.app/"
+                "https://danis-choice-website.vercel.app"
             ]
         }},
         supports_credentials=True,
