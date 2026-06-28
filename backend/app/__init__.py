@@ -45,7 +45,7 @@ def create_app(config_name=None):
         app,
         resources={r"/api/*": {
             "origins": [
-                "https://danis-choice-website.vercel.app"
+                "https://danis-choice-website-ao9tfxhd6-daudi105.vercel.app/"
             ]
         }},
         supports_credentials=True,
@@ -96,8 +96,5 @@ def create_app(config_name=None):
             "error": str(e)
         }, 500
 
-    @app.errorhandler(500)
-    def server_error(e):
-        return {'success': False, 'message': 'Internal server error'}, 500
 
     return app
