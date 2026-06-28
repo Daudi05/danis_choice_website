@@ -87,9 +87,14 @@ def create_app(config_name=None):
     def health():
         return {'status': 'ok', 'service': "Danis Choice API"}
 
-    @app.errorhandler(404)
-    def not_found(e):
-        return {'success': False, 'message': 'Not found'}, 404
+    @app.errorhandler(500)
+    def server_error(e):
+        import traceback
+        traceback.print_exc()
+        return {
+            "success": False,
+            "error": str(e)
+        }, 500
 
     @app.errorhandler(500)
     def server_error(e):
