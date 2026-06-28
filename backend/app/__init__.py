@@ -42,19 +42,15 @@ def create_app(config_name=None):
         return {'success': False, 'message': f'Invalid token: {reason}'}, 422
 
     CORS(
-        app,
-        resources={r"/api/*": {
-            "origins": [
-                "https://danis-choice-website-pantolwaq-daudi105.vercel.app"
-            ]
-        }},
-        supports_credentials=True,
-        allow_headers=[
-            "Content-Type",
-            "Authorization"
-        ],
-        methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-    )
+    app,
+    resources={r"/api/*": {"origins": "*"}},
+    supports_credentials=False,
+    allow_headers=[
+        "Content-Type",
+        "Authorization"
+    ],
+    methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+)
 
     # Security headers
     @app.after_request
