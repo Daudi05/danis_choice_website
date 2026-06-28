@@ -41,16 +41,10 @@ def create_app(config_name=None):
         print(f"INVALID TOKEN: {reason}")
         return {'success': False, 'message': f'Invalid token: {reason}'}, 422
 
-    CORS(
-    app,
-    resources={r"/api/*": {"origins": "*"}},
-    supports_credentials=False,
-    allow_headers=[
-        "Content-Type",
-        "Authorization"
-    ],
-    methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
-)
+    from flask_cors import CORS
+
+    CORS(app)
+    print("Flask-CORS initialized")
 
     # Security headers
     @app.after_request
